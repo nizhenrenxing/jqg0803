@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="card">
+            <h2>STEPS</h2>
+            <p>THIS WEEK</p>
+            <div class="chart">
+                <span class="bar bar1"><i><span>S</span></i></span>
+                <span class="bar bar2"><i><span>S</span></i></span>
+                <span class="bar bar3"><i><span>S</span></i></span>
+                <span class="bar bar4"><i><span>S</span></i></span>
+                <span class="bar bar5"><i><span>S</span></i></span>
+                <span class="bar bar6"><i><span>S</span></i></span>
+                <span class="bar bar7"><i><span>S</span></i></span>
+            </div>
+            <h3>93,000</h3>
+        </div>
+    </div>
+    <script>
+        var card = document.querySelector('.card')
+        card.onclick = function () {
+            if (card.className.indexOf('active') == -1) {
+                document.querySelector('.card').className = 'card active'
+            } else {
+                document.querySelector('.card').className = 'card'
+            }
+        }
+    </script>
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
+        .stage {
+            width: 100%;
+            height: 100%;
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1500px;
+            transform-style: preserve-3d;
+        }
+
+        .stage .card {
+            width: 300px;
+            height: 500px;
+            background: url('./img/1.jpg') no-repeat center;
+            background-size: cover;
+            border-radius: 20px;
+            transition: all 1s cubic-bezier(0.49, 0.15, 0.46, 1.15);
+            transform-origin: center center 100px;
+            transform: translateZ(220px) rotateX(0deg);
+            transform-style: preserve-3d;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            text-align: center;
+        }
+
+        .stage .card>* {
+            flex-basis: 100%;
+        }
+
+        .stage .card .child {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            transition: inherit;
+        }
+
+        .stage .card::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            transition: inherit;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .stage .card::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            transition: inherit;
+            background: #111;
+            transform: translateZ(-20px);
+        }
+
+        .stage .card .chart {
+            display: flex;
+            justify-content: center;
+            transition: inherit;
+        }
+
+        .stage .card .chart .bar {
+            width: 20px;
+            height: 20px;
+            display: block;
+            margin: 10px;
+            transform: rotate(-45deg);
+            transform-style: preserve-3d;
+            perspective: 1500px;
+            transition: inherit;
+        }
+
+        .stage .card .chart .bar i {
+            width: 20px;
+            height: 20px;
+            display: block;
+            background: white;
+            transition: inherit;
+        }
+
+        .stage .card .chart .bar::before {
+            content: '';
+            display: block;
+            width: 0px;
+            height: 20px;
+            background: lightslategray;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+            transition: inherit;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .stage .card .chart .bar::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 0px;
+            background: lightslategray;
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+            transition: inherit;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .stage .card.active {
+            transform: translateZ(220px) rotateX(60deg);
+        }
+
+        .stage .card.active::before {
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .stage .card.active::after {
+            box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .stage .card.active .chart .bar:nth-child(1) i {
+            transform: translateZ(150px);
+        }
+
+        .stage .card.active .chart .bar:nth-child(1)::before {
+            width: 150px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(1)::after {
+            height: 150px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(2) i {
+            transform: translateZ(250px);
+        }
+
+        .stage .card.active .chart .bar:nth-child(2)::before {
+            width: 250px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(2)::after {
+            height: 250px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(3) i {
+            transform: translateZ(200px);
+        }
+
+        .stage .card.active .chart .bar:nth-child(3)::before {
+            width: 200px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(3)::after {
+            height: 200px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(4) i {
+            transform: translateZ(180px);
+        }
+
+        .stage .card.active .chart .bar:nth-child(4)::before {
+            width: 180px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(4)::after {
+            height: 180px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(5) i {
+            transform: translateZ(130px);
+        }
+
+        .stage .card.active .chart .bar:nth-child(5)::before {
+            width: 130px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(5)::after {
+            height: 130px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(6) i {
+            transform: translateZ(225px);
+        }
+
+        .stage .card.active .chart .bar:nth-child(6)::before {
+            width: 225px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(6)::after {
+            height: 225px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(7) i {
+            transform: translateZ(80px);
+        }
+
+        .stage .card.active .chart .bar:nth-child(7)::before {
+            width: 80px;
+        }
+
+        .stage .card.active .chart .bar:nth-child(7)::after {
+            height: 80px;
+        }
+
+        .stage .card .chart .bar i span{
+            display: block;
+            line-height: 20px;
+            text-align: center;
+            transform: rotate(45deg);
+            color: blue;
+        }
+
+        .stage .card h3{
+            color: white;
+            letter-spacing: 2px;
+            transform: translateZ(15px);
+        }
+
+        .stage .card p{
+            color: white;
+            transform: translateZ(15px);
+        }
+
+        .stage .card h2{
+            color: white;
+            transform: translateZ(15px);
+        }
+    </style>
+</body>
+
+</html>
