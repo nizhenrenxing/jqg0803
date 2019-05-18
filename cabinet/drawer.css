@@ -1,0 +1,250 @@
+body {
+  background: lightblue;
+  margin: 0;
+}
+.bigbox {
+  background: ;
+  width: 300px;
+  height: 510px;
+  margin: 0 auto;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.bigbox .box {
+  width: 300px;
+  height: 510px;
+  margin: 0 auto;
+  margin-top: 150px;
+  position: relative;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(45deg);
+}
+.bigbox .box .box_font {
+  width: 100%;
+  height: 100%;
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bigbox .box .box_font li {
+  width: 100%;
+  height: 170px;
+  list-style: none;
+  box-sizing: border-box;
+  border: 15px solid #5b5b5b;
+}
+.bigbox .box .box_back {
+  width: 100%;
+  height: 100%;
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-300px);
+}
+.bigbox .box .box_left {
+  width: 100%;
+  height: 100%;
+  background: #323232;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-150px) translateX(-150px) rotateY(90deg);
+}
+.bigbox .box .box_right {
+  width: 100%;
+  height: 100%;
+  background: #474747;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-150px) translateX(150px) rotateY(90deg);
+}
+.bigbox .box .box_top {
+  width: 100%;
+  height: 300px;
+  background: #474747;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-150px) translateY(-150px) rotateX(90deg);
+}
+.bigbox .box .box_bottom {
+  width: 100%;
+  height: 300px;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-150px) translateY(360px) rotateX(90deg);
+}
+.bigbox .box .cupboardA {
+  width: 290px;
+  height: 160px;
+  position: absolute;
+  background: blue;
+  left: 5px;
+  top: 10px;
+  transform-style: preserve-3d;
+  transform: translateZ(0px);
+  transition: all 0.3s;
+}
+.bigbox .box .cupboardA .cupboardA_font {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  background: #303030;
+}
+.bigbox .box .cupboardA .cupboardA_back {
+  width: 270px;
+  height: 100px;
+  background: #d9d9d9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-270px) translateX(15px) translateY(50px);
+}
+.bigbox .box .cupboardA .cupboardA_left {
+  width: 270px;
+  height: 100px;
+  background: #e6e6e6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-135px) translateX(-120px) translateY(50px) rotateY(90deg);
+}
+.bigbox .box .cupboardA .cupboardA_right {
+  width: 270px;
+  height: 100px;
+  background: #e6e6e6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-135px) translateX(145px) translateY(50px) rotateY(90deg);
+}
+.bigbox .box .cupboardA .cupboardA_bottom {
+  width: 270px;
+  height: 270px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-135px) translateX(15px) translateY(10px) rotateX(90deg);
+}
+.bigbox .box .cupboardB {
+  width: 290px;
+  height: 160px;
+  position: absolute;
+  background: blue;
+  left: 5px;
+  top: 175px;
+  transform-style: preserve-3d;
+  transform: translateZ(0px);
+  transition: all 0.3s;
+}
+.bigbox .box .cupboardB .cupboardB_font {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  background: #303030;
+}
+.bigbox .box .cupboardB .cupboardB_back {
+  width: 270px;
+  height: 100px;
+  background: #d9d9d9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-270px) translateX(15px) translateY(50px);
+}
+.bigbox .box .cupboardB .cupboardB_left {
+  width: 270px;
+  height: 100px;
+  background: #e6e6e6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-135px) translateX(-120px) translateY(50px) rotateY(90deg);
+}
+.bigbox .box .cupboardB .cupboardB_right {
+  width: 270px;
+  height: 100px;
+  background: #e6e6e6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-135px) translateX(145px) translateY(50px) rotateY(90deg);
+}
+.bigbox .box .cupboardB .cupboardB_bottom {
+  width: 270px;
+  height: 270px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-135px) translateX(15px) translateY(15px) rotateX(90deg);
+}
+.bigbox .box .cupboardC {
+  width: 290px;
+  height: 160px;
+  position: absolute;
+  background: blue;
+  left: 5px;
+  top: 340px;
+  transform-style: preserve-3d;
+  transform: translateZ(0px);
+  transition: all 0.3s;
+}
+.bigbox .box .cupboardC .cupboardC_font {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  background: #303030;
+}
+.bigbox .box .cupboardC .cupboardC_back {
+  width: 270px;
+  height: 100px;
+  background: #d9d9d9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-270px) translateX(15px) translateY(50px);
+}
+.bigbox .box .cupboardC .cupboardC_left {
+  width: 270px;
+  height: 100px;
+  background: #e6e6e6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-135px) translateX(-120px) translateY(50px) rotateY(90deg);
+}
+.bigbox .box .cupboardC .cupboardC_right {
+  width: 270px;
+  height: 100px;
+  background: #e6e6e6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-135px) translateX(145px) translateY(50px) rotateY(90deg);
+}
+.bigbox .box .cupboardC .cupboardC_bottom {
+  width: 270px;
+  height: 270px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(-135px) translateX(15px) translateY(15px) rotateX(90deg);
+}
